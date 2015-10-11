@@ -2,7 +2,7 @@
 using namespace std;
 
 #define MAX 50
-#define inf 10000000
+
 
 //number of pointers or number of child blocks [numberOfPointers = numberOfNodes + 1]
 int numberOfPointers;
