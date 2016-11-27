@@ -1,5 +1,5 @@
 #B+ Tree Data Insertion and Deletion
-My B+ Tree Tuotial Link: https://sketchingdream.wordpress.com/b-plus-tree-tutorial/
+My B+ Tree Tuotial Link: http://sketchingdream.com/b-plus-tree-tutorial/
 The source code is well commented to understand which line does what
 We can take input from file or manually, both the process is same as follwoing:
 
