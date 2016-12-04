@@ -473,7 +473,7 @@ void deleteNode(Block *curBlock, int val, int curBlockPosition){
             Block *rightBlock = new Block();
             rightBlock = curBlock->parentBlock->childBlock[1];
 
-            //if we the right one has more than half nodes of maximum capacity than re-distribute
+            //if we see the right one has more than half nodes of maximum capacity than re-distribute
             if( rightBlock!=NULL && rightBlock->tNodes-1 >= ceil((numberOfPointers-1)/2) ){
                 redistributeBlock(curBlock, rightBlock, isLeaf, 0, 0);
             }
