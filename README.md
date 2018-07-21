@@ -1,5 +1,5 @@
 # B+ Tree Data Insertion and Deletion
-## My B+ Tree Tuotial Link: www.sketchingdream.com/blog/b-plus-tree-tutorial/
+## My B+ Tree Tuotial Link: http://www.sayef.tech/posts/2018/07/16/b-plus-tree-tutorial
 The source code is well commented to understand which line does what. We can take input from file or manually, both the process is same as follwoing:
 
 1. First give the number of pointers
