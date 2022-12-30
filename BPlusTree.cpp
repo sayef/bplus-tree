@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 #include <iostream>
 #include <random>
 #include <utility>
@@ -7,8 +8,7 @@
 using namespace std;
 
 class Node {
-
-public:
+ public:
   Node(Node *parent = nullptr, bool isLeaf = false, Node *prev_ = nullptr,
        Node *next_ = nullptr)
       : parent(parent), isLeaf(isLeaf), prev(prev_), next(next_) {
@@ -59,7 +59,6 @@ public:
   }
 
   tuple<int, Node *, Node *> splitInternal() {
-
     Node *left = new Node(parent, false, nullptr, nullptr);
     int mid = keys.size() / 2;
 
@@ -105,7 +104,6 @@ public:
   }
 
   tuple<int, Node *, Node *> splitLeaf() {
-
     Node *left = new Node(parent, true, prev, this);
     int mid = keys.size() / 2;
 
@@ -120,7 +118,7 @@ public:
 };
 
 class BPlusTree {
-public:
+ public:
   BPlusTree(int _maxCapacity = 4) {
     root = new Node(nullptr, true, nullptr, nullptr);
     maxCapacity = _maxCapacity > 2 ? _maxCapacity : 2;
@@ -227,8 +225,7 @@ public:
     node->values.insert(node->values.end(), next->values.begin(),
                         next->values.end());
     node->next = next->next;
-    if (node->next)
-      node->next->prev = node;
+    if (node->next) node->next->prev = node;
     for (int i = 0; i < next->parent->children.size(); i++) {
       if (node->parent->children[i] == next) {
         node->parent->keys.erase(node->parent->keys.begin() + i - 1);
@@ -245,8 +242,7 @@ public:
                         node->values.end());
 
     prev->next = node->next;
-    if (prev->next)
-      prev->next->prev = prev;
+    if (prev->next) prev->next->prev = prev;
 
     for (int i = 0; i < node->parent->children.size(); i++) {
       if (node->parent->children[i] == node) {
@@ -319,7 +315,6 @@ public:
     }
 
     if (node->keys.size() < minCapacity) {
-
       if (node == root) {
         if (root->keys.empty() && !root->children.empty()) {
           root = root->children[0];
@@ -347,7 +342,6 @@ public:
           mergeNodeWithLeftLeaf(node, prev);
         }
       } else {
-
         int myPositionInParent = -1;
 
         for (int i = 0; i < node->parent->children.size(); i++) {
@@ -399,8 +393,7 @@ public:
   }
 
   void print(Node *node = nullptr, string _prefix = "", bool _last = true) {
-    if (!node)
-      node = root;
+    if (!node) node = root;
     cout << _prefix << "├ [";
     for (int i = 0; i < node->keys.size(); i++) {
       cout << node->keys[i];
@@ -422,7 +415,6 @@ public:
 };
 
 int main() {
-
   BPlusTree tree(3);
   vector<int> random_list = {5,  9,  1,  3,   4,   59,  65,  45,
                              89, 29, 68, 108, 165, 298, 219, 569,
@@ -432,7 +424,6 @@ int main() {
       vector<int>(random_list.begin(), random_list.end());
 
   for (int r : random_list_2) {
-
     for (int i : random_list) {
       cout << endl << "-------------" << endl;
       cout << "Inserting " << i << endl << endl;
